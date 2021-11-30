@@ -1,0 +1,45 @@
+-- CREATE TABLE sparta_trainees
+-- (
+--     Trainee_ID INT PRIMARY KEY IDENTITY(100,1),
+--     FirstName CHAR(15) NOT NULL, 
+--     LastName CHAR(20) NOT NULL, 
+--     Course VARCHAR(20), 
+--     Trainer CHAR(20), 
+--     City CHAR(20)
+-- )
+
+-- INSERT INTO sparta_trainees (
+--     FirstName, LastName, Course, Trainer
+-- ) VALUES (
+--     'Megan', 'Waterhouse', 'Data 25', 'Danny Jew'
+-- )
+
+-- UPDATE sparta_trainees 
+-- SET Trainer_ID = 10
+
+-- ALTER TABLE sparta_trainees
+-- ADD City_ID INT 
+
+-- CREATE TABLE City
+-- (
+--     City_ID INT,
+--     CityName CHAR(15)
+-- )
+-- INSERT INTO City
+-- (City_ID, CityName) VALUES (
+--     4, 'Birmingham'
+-- )
+
+SELECT * FROM sparta_trainees;
+SELECT * FROM Trainers;
+SELECT * FROM City
+
+SELECT *
+FROM sparta_trainees st
+JOIN Trainers t ON t.Trainer_ID = st.Trainer_ID
+JOIN City c ON c.City_ID = st.City_ID
+
+SELECT *
+FROM sparta_trainees st
+FULL OUTER JOIN Trainers t ON t.Trainer_ID = st.Trainer_ID
+FULL OUTER JOIN City c ON c.City_ID = st.City_ID
